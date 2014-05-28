@@ -57,7 +57,7 @@ public class MatchersTest {
 
     @Test
     public void testContainsWithHamcrest() {
-        assertTrue(bank.getName().contains("CIB") || bank.getName().contains("BANK"));
+        assertThat(bank.getName(), either(containsString("CIB")).or(containsString("BANK")));
     }
 
     @Test
